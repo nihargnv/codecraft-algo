@@ -151,7 +151,7 @@ h2 {
 .dropzone {
   display: inline-block;
   min-width: 80px; /* Minimum width */
-  max-width: 400px; /* Maximum width */
+  max-width: 600px; /* Maximum width */
   width: auto; /* Let width be determined by content */
   height: 28px;
   max-height: 50px;
