@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap");
+
+:root {
+  /* VS Code Dark Theme Colors */
+  --background: #1e1e1e;
+  --foreground: #d4d4d4;
+  --sidebar: #252526;
+  --active-tab: #1e1e1e;
+  --inactive-tab: #2d2d2d;
+  --tab-border: #252526;
+  --highlight: #264f78;
+  --selection: #3a3d41;
+  --line-number: #858585;
+  --comment: #6a9955;
+  --keyword: #569cd6;
+  --string: #ce9178;
+  --function: #dcdcaa;
+  --variable: #9cdcfe;
+  --class: #4ec9b0;
+  --border: #404040;
+  --activity-bar: #333333;
+  --status-bar: #007acc;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "JetBrains Mono", monospace;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* VS Code Header */
+.vscode-header {
+  display: flex;
+  background-color: var(--activity-bar);
+  padding: 5px 15px;
+  border-bottom: 1px solid var(--border);
+}
+
+.vscode-header .title {
+  color: var(--keyword);
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+/* Main Content */
+.content {
+  flex: 1;
+  padding: 20px;
+  position: relative;
+}
+
+/* Line Numbers */
+.content-with-line-numbers {
+  display: flex;
+}
+
+.line-numbers {
+  color: var(--line-number);
+  text-align: right;
+  padding-right: 15px;
+  user-select: none;
+  font-size: 14px;
+}
+
+.line-number {
+  padding: 3px 0;
+}
+
+.main-content {
+  flex: 1;
+  padding-left: 15px;
+  border-left: 1px solid var(--border);
+}
+
+/* Welcome Screen */
+#first-sec {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo h1 {
+  font-size: 3em;
+  color: var(--keyword);
+  font-weight: 700;
+}
+
+.head {
+  color: var(--variable);
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Rules Section */
+.rules {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: var(--keyword);
+  margin-bottom: 10px;
+  background-color: var(--selection);
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1.3rem;
+}
+
+.rulesList {
+  list-style-type: none;
+  padding: 15px;
+  background-color: var(--selection);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.rulesList li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+
+.rulesList li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--comment);
+}
+
+/* Question Sets */
+.ques-sets {
+  text-align: left;
+  background-color: var(--selection);
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid var(--border);
+}
+
+.ques-sets h2 {
+  color: var(--class);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: var(--inactive-tab);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.card-odd {
+  background-color: var(--inactive-tab);
+}
+
+.card-even {
+  background-color: #2a2d2e;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-color: var(--keyword);
+}
+
+.card .det_name {
+  color: var(--variable);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.btn {
+  background-color: var(--status-bar);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  width: auto;
+  align-self: flex-end;
+}
+
+.btn:hover {
+  background-color: #005faa;
+  font-size: 14px;
+}
+
+/* Question Container */
+.question-container {
+  background-color: var(--background);
+  border-radius: 5px;
+  height: 87vh;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  border: 1px solid var(--border);
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--sidebar);
+}
+
+#set-name {
+  color: var(--keyword);
+  font-size: 14px;
+  background-color: var(--selection);
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+#timer {
+  color: var(--string);
+  font-size: 14px;
+  background-color: var(--selection);
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+#questions {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+  font-family: "JetBrains Mono", monospace;
+  margin-top: 0;
+}
+
+#questions p {
+  margin-bottom: 25px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 25px;
+  font-size: 1.5rem;
+}
+
+#questions p::before {
+  content: "//";
+  position: absolute;
+  left: 0;
+  color: var(--comment);
+}
+
+#q1,
+#q2,
+#q3 {
+  color: var(--foreground);
+}
+
+/* Status Bar */
+.status-bar {
+  background-color: var(--status-bar);
+  padding: 3px 15px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.status-left,
+.status-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dispNone {
+  display: none;
+}
